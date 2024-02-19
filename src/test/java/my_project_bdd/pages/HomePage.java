@@ -17,12 +17,21 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//h2[@data-testid='cookie-popup-title']")
     private WebElement cookieHeader;
 
+    @FindBy(xpath = "//*[@id=\"app-root\"]/header/div/div[2]/div/div[3]/div[3]/div/button/span/div/div")
+    private WebElement contulMeuButton;
+
+
+
     public void clickAcceptCookiesButton() {
         acceptCookiesButton.click();
     }
 
     public void openHomePage(){
         driver.get("https://www.mega-image.ro/");
+    }
+
+    public void clickContulMeuButton() {
+        contulMeuButton.click();
     }
 
     public void validateCookieHeader (){

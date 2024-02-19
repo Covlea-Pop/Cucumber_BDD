@@ -2,6 +2,7 @@ package my_project_bdd.steps;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import my_project_bdd.driver.DriverManager;
 import my_project_bdd.pages.HomePage;
 
@@ -17,5 +18,10 @@ public class HomeSteps extends DriverManager {
     public void acceptCookies(){
         homePage.validateCookieHeader();
         homePage.clickAcceptCookiesButton();
+    }
+    @When("I click 'Contul Meu' button")
+    public void clickContulMeu(){
+
+        homePage.clickContulMeuButton();
     }
 }
