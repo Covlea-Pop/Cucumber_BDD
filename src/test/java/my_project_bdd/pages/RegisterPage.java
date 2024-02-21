@@ -17,16 +17,38 @@ public class RegisterPage extends BasePage {
     @FindBy(xpath = "//p[@data-testid=\"form-error-message\"]")
     private WebElement validationErrorMsg;
 
+    @FindBy(xpath = "//input[@data-testid=\"input-field\"]")
+    private WebElement emailPhoneInput;
 
-    public void clickContinueButton(){
+    @FindBy(xpath = "//h2[@data-testid=\"create-account-title\"]")
+    private WebElement registerHeader;
+
+    @FindBy(xpath = "//div[contains(text(),'Creeaza un cont nou')]")
+    private WebElement creeazaContNou;
+
+
+    public void clickContinueButton() {
         continueButton.click();
     }
 
-    public void validateErrorMessage (String expectedMsg){
+    public void fillEmailPhoneInput(String emailPhone) {
+        emailPhoneInput.sendKeys(emailPhone);
 
-        Assert.assertEquals("Validation msg is wrong",expectedMsg,validationErrorMsg.getText());
     }
 
+    public void clickCreeazaContNou(){
+        creeazaContNou.click();
+    }
+
+    public void validateErrorMessage(String expectedMsg) {
+
+        Assert.assertEquals("Validation msg is wrong", expectedMsg, validationErrorMsg.getText());
+    }
+
+    public void validateRegisterHeader() {
+
+        Assert.assertEquals("Register header is wrong", "Creeaza un cont nou", registerHeader.getText());
+    }
 
 
 }

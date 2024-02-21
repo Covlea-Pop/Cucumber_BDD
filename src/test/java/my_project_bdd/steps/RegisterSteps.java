@@ -12,11 +12,26 @@ public class RegisterSteps extends DriverManager {
     public void clickContinue() {
         registerPage.clickContinueButton();    }
 
+    @When("I fill email/phone input:(.*)$" )
+    public void fillEmailPhone(String phoneEmail) {
+        registerPage.fillEmailPhoneInput(phoneEmail);
+    }
 
-    @Then("I Validate error msg: (.*)$")
+    @When("I click on 'Creeaza cont nou' button")
+    public void clickCreeazaContNou(){
+        registerPage.clickCreeazaContNou();
+    }
+
+        @Then("I Validate error msg: (.*)$")
     public void validateMsg(String expectedMsg){
         registerPage.validateErrorMessage(expectedMsg);
 
     }
+    @Then("I validate register header is displayed")
+    public void validateRegisterHeader(){
+        registerPage.validateRegisterHeader();
+
+    }
+
 
 }
