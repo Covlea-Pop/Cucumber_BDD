@@ -1,4 +1,4 @@
-package my_project_bdd.driver;
+package my_proj_bdd.driver;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.After;

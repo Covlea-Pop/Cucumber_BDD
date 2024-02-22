@@ -1,4 +1,4 @@
-package my_project_bdd.driver;
+package my_proj_bdd.driver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +13,7 @@ public class DriverManager {
     public WebDriver startDriver() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         return driver;
     }

@@ -2,34 +2,29 @@ Feature: Register features
 
   Background:
     Given I am a user on Mega Image home page
-    Then I validate cookie header and click accept cookie button
-    When I click 'Contul Meu' button
+    Then I validate cookie header and click accept cookies button
+    When I click 'Contul meu' button
 
-
-  Scenario: Negative : Missing phone/email
+  Scenario: Negative: Missing phone/email
     When I click 'Continua' button
-    Then I Validate error msg: Te rugam sa introduci adresa de e-mail sau numarul de telefon
+    Then I validate error message: Te rugam sa introduci adresa de e-mail sau numarul de telefon
 
-
-  Scenario Outline: Negative : Invalid phone/email
-    When I fill email/phone input:<email_phone>
+  Scenario Outline: Negative: Invalid phone/email
+    When I fill email/phone input: <email_phone>
     When I click 'Continua' button
-    Then I Validate error msg: Te rugam sa introduci un format valid
+    Then I validate error message: Te rugam sa introduci un format valid
 
     Examples:
-    | email_phone |
-    | 0744        |
-    | email.com   |
+      | email_phone |
+      | 0744        |
+      | email.com   |
 
-  Scenario Outline: Positive : Valid email/phone
-    When I fill email/phone input:<email_phone>
+  Scenario Outline: Positive: Valid email/phone
+    When I fill email/phone input: <email_phone>
     When I click 'Continua' button
-    When I click on 'Creeaza cont nou' button
     Then I validate register header is displayed
 
     Examples:
-    |  email_phone     |
-    |  0774123123      |
-    |  e123@email.com  |
-
-
+      | email_phone    |
+      | 0774123123     |
+      | e123@email.com |
