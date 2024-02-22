@@ -24,4 +24,17 @@ public class HomeSteps extends DriverManager {
 
         homePage.clickContulMeuButton();
     }
+
+    @When("I click 'Shopping Cart' button")
+    public void clickShoppingCart(){
+
+        homePage.clickShoppingCartButton();
+    }
+
+
+    @When("I click 'Adauga' button with index: (.*)$")
+    public void clickAdauga(String index){
+
+        homePage.clickAddToBasketButtonByIndex(index);
+    }
 }
