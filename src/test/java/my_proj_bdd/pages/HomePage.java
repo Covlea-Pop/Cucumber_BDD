@@ -33,11 +33,15 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "/html/body/div[4]/div/div[1]/header/div/div[2]/button/span")
     private WebElement alegeMaiTarziuBtn;
+    @FindBy(xpath = "//a[contains(text(),'Retete')]")
+    private WebElement recipesButton;
 
     // Actiuni
     public void clickAcceptCookiesButton() {
         accecptCookiesButton.click();
     }
+
+    public void clickRecipesButton(){recipesButton.click();}
 
     public void openHomePage() {
         driver.get("https://www.mega-image.ro/");

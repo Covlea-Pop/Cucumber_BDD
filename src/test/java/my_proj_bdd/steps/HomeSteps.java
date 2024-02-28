@@ -36,4 +36,7 @@ public class HomeSteps extends DriverManager {
         homePage.clickAddToBasketButtonByIndex(index);
         homePage.clickAlegeMaiTarziuButton();
     }
+
+    @When("I click Recipes Button")
+    public void clickRecipesButton(){homePage.clickRecipesButton();}
 }
